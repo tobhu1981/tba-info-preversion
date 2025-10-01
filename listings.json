@@ -1,0 +1,25 @@
+[
+  {
+    "listing": "/study-run/Szenarien/index.html",
+    "items": [
+      "/study-run/Szenarien/page_Demo.html",
+      "/study-run/Szenarien/page_LSA.html",
+      "/study-run/Szenarien/page_Übungsmodule.html"
+    ]
+  },
+  {
+    "listing": "/tasks/design/basic/index.html",
+    "items": []
+  },
+  {
+    "listing": "/Schulungsmaterial/index.html",
+    "items": []
+  },
+  {
+    "listing": "/news/index.html",
+    "items": [
+      "/news/entries/2025-01-10 speedtest.html",
+      "/news/entries/2024-11-14 release plan.html"
+    ]
+  }
+]
