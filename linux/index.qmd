@@ -1,0 +1,28 @@
+---
+lang: de
+title: "Linux"
+---
+
+## Zugriffsrechte
+
+**Schreibzugriff Ordner und alle Unterordner:** `sudo chmod -R 777 data`
+
+## Terminalbefehle
+
+### Dateien mit bestimmten Endungen zählen
+
+`ls *.Dateiendung | wc -l`
+
+### Json bestimmte Felder auslesen
+
+#### Auslesen Top-Level-Key
+
+`jq -r 'keys | join(", ")' sessions.json | xclip -selection clipboard`
+
+#### Auslesen aller bestimmten Werte einer JSON
+
+`jq -r '.. | .groupName? // empty' datei.json`
+
+#### Ausgabe und zählen von Zeileninhalten einer bestimmten Spalte
+
+`awk -F';' 'NR>1 {gsub(/"/, "", $2); print $2}' logs-test.csv | sort | uniq -c`

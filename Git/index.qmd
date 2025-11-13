@@ -1,0 +1,21 @@
+---
+lang: de
+title: "Git Infos"
+lightbox:
+  match: auto
+  effect: fade
+  desc-position: right
+  loop: false
+  css-class: "my-css-class"
+---
+
+# Git Versionskontrolle
+
+
+## Workflow
+
+![](assets/Git-1.png){group="my-gallery"}
+
+![](assets/Git-2.png){group="my-gallery"}
+
+![](assets/Git-3.png){group="my-gallery"}

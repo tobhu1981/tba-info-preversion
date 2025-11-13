@@ -1,0 +1,9 @@
+---
+lang: de
+title: "Idea"
+---
+
+**Autocomplete:** `Strg+Leertaste`
+
+**auf XSD-Pfad prüfen:** `Alt+Enter`
+

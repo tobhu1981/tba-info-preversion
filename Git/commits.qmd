@@ -1,0 +1,172 @@
+---
+lang: de
+title: "Alles zu Commits"
+format:
+  html:
+    toc: false
+
+---
+
+# Commit-Message ändern
+
+# Git: Commit-Message ändern - Cheatsheet
+
+## Letzten Commit ändern
+
+```bash
+# Message direkt ändern
+git commit --amend -m "Neue Commit-Message"
+
+# Editor öffnen zum Bearbeiten
+git commit --amend
+```
+
+## Älteren Commit ändern (Interactive Rebase)
+
+```bash
+# Letzte n Commits anzeigen
+git rebase -i HEAD~n
+
+# Beispiel: Letzte 5 Commits
+git rebase -i HEAD~5
+
+# Spezifischen Commit nach Hash ändern
+git rebase -i <commit-hash>^
+```
+
+**Im Editor:**
+1. Ändere `pick` zu `reword` (oder `r`) bei dem gewünschten Commit
+2. Speichern und schließen
+3. Neuer Editor öffnet sich → Message ändern
+4. Speichern und schließen
+
+## Nach Remote pushen
+
+### Branch hat Upstream-Verbindung
+
+```bash
+git push --force-with-lease
+```
+
+### Branch hat KEINE Upstream-Verbindung
+
+```bash
+# Fehler: "has no upstream branch"
+
+# Lösung 1: Upstream setzen und pushen
+git push -u origin <branch-name>
+
+# Lösung 2: Upstream-Verbindung setzen
+git branch --set-upstream-to=origin/<branch-name>
+
+# Lösung 3: Direkt mit Remote-Branch pushen
+git push --force-with-lease origin <branch-name>
+```
+
+### Upstream-Verbindung überprüfen
+
+```bash
+git branch -vv
+```
+
+## ⚠️ Wichtige Hinweise
+
+- `--force-with-lease` ist sicherer als `--force` (prüft, ob Remote zwischenzeitlich geändert wurde)
+- Vorsicht bei bereits gepushten Commits - History wird neu geschrieben!
+- Nicht bei Commits verwenden, auf denen andere arbeiten
+- Immer vor dem Force-Push mit dem Team absprechen
+
+# Commit-Messages Tags
+
+# Git Commit Präfixe & Abkürzungen
+
+## Bereichs-Präfixe (Scope)
+
+### Anwendungsbereich
+
+- `[fe]` / `[frontend]` - Frontend/Client-Code
+- `[be]` / `[backend]` - Backend/Server-Code
+- `[api]` - API-spezifische Änderungen
+- `[db]` - Datenbank (Schema, Migrationen)
+- `[ui]` / `[ux]` - User Interface / User Experience
+- `[mobile]` - Mobile App
+- `[web]` - Web-Anwendung
+- `[admin]` - Admin-Panel/Dashboard
+
+### Infrastruktur & Tooling
+
+- `[ci]` / `[cd]` - Continuous Integration / Deployment
+- `[build]` - Build-System, Compiler
+- `[config]` - Konfigurationsdateien
+- `[deps]` - Dependencies/Abhängigkeiten
+- `[docker]` - Docker-bezogene Änderungen
+- `[k8s]` - Kubernetes
+- `[infra]` - Infrastruktur allgemein
+
+### Testing & Quality
+
+- `[test]` / `[tests]` - Tests
+- `[e2e]` - End-to-End Tests
+- `[unit]` - Unit Tests
+- `[perf]` - Performance-Verbesserungen
+- `[a11y]` - Accessibility (Barrierefreiheit)
+- `[security]` / `[sec]` - Sicherheit
+
+### Dokumentation
+
+- `[docs]` - Dokumentation
+- `[readme]` - README-Datei
+- `[changelog]` - Changelog
+- `[comments]` - Code-Kommentare
+
+## Typ-Präfixe (Conventional Commits)
+
+- `feat:` - Neues Feature
+- `fix:` - Bugfix
+- `refactor:` - Code-Umstrukturierung
+- `style:` - Formatierung, Styling (kein Code-Verhalten)
+- `perf:` - Performance-Optimierung
+- `test:` - Tests hinzufügen/ändern
+- `docs:` - Dokumentation
+- `build:` - Build-System
+- `ci:` - CI-Konfiguration
+- `chore:` - Wartungsarbeiten
+- `revert:` - Commit rückgängig machen
+- `wip:` - Work in Progress (vermeiden im Main-Branch!)
+- `hotfix:` - Dringender Fix für Production
+
+## Kombinationen
+
+Oft werden beide Systeme kombiniert:
+
+```
+feat(fe): Add user profile page
+fix(be): Resolve database connection timeout
+docs(api): Update authentication guide
+test(e2e): Add checkout flow tests
+chore(deps): Update React to v18
+refactor(db): Optimize user queries
+```
+
+## Weitere Abkürzungen in Commit-Messages
+
+- `WIP` - Work In Progress
+- `BREAKING CHANGE` - Inkompatible Änderung
+- `Fixes #123` - Verknüpfung mit Issue
+- `Closes #123` - Issue schließen
+- `Refs #123` - Referenz auf Issue
+- `Co-authored-by:` - Mehrere Autoren
+
+## Team-spezifische Präfixe
+
+Manche Teams haben eigene Konventionen:
+
+- `[analytics]` - Analytics/Tracking
+- `[i18n]` / `[l10n]` - Internationalisierung/Lokalisierung
+- `[seo]` - SEO-Optimierungen
+- `[migration]` - Datenmigrationen
+- `[experiment]` - A/B-Tests, Feature-Flags
+
+## Tipp
+
+Schau in eurer `CONTRIBUTING.md` oder fragt im Team nach den bevorzugten Konventionen – Konsistenz ist wichtiger als die perfekte Liste!

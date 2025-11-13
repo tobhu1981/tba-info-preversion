@@ -1,0 +1,18 @@
+---
+lang: de
+title: "GitHub-Pages einrichten"
+---
+
+1. github repo anlegen
+2. branch mit VSC angelegt und publisht
+3. settings in repo bzgl. gh-pages wie in Quarto Anleitung vorgenommen
+4. VSC in gh-pages branch: git reset --hard # make sure all changes are committed before running this!
+5. VSC in gh-pages branch: git commit --allow-empty -m "Initialising gh-pages branch"
+6. Quartodateien in lokales repo kopieren. Wichtig: Nicht originales .git-Verzeichnis im Repo-Ordner überschreiben!
+7. VSC in gh-pages branch: git push origin gh-pages
+8. .gitignore im lokalen repo anlegen und .quarto und _site ausschließen
+9. remove _site: git rm -r _site
+10. VSC in gh-branch: quarto publish gh-pages
+11. VSC: wechsel in main-branch
+12. GitHub-Action benutzen: Verzeichnis: .github/workflows/publish.yml hinzufügen und Code siehe Quarto Beschreibung einfügen
+13. VCS in main-branch: commit und push aller Dateien

@@ -1,0 +1,14 @@
+---
+lang: de
+title: "Befehle"
+---
+
+### Commits rückgängig machen
+
+**letzter Commit:**
+
+`git reset --soft HEAD~1`
+
+### einzelnen Commit einbinden
+
+`git cherry-pick commitnumber`

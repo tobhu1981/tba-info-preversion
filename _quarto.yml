@@ -44,6 +44,22 @@ website:
         contents:
           - href: cypress/lesbarkeit.qmd
           - href: cypress/examples.qmd
+      - section: Quarto
+        href: quarto/index.qmd
+        contents:
+          - href: quarto/github-pages.qmd
+          - href: quarto/tables.qmd
+      - section: Git
+        href: Git/index.qmd
+        contents:
+          - href: Git/commits.qmd
+          - href: Git/orders.qmd
+      - href: docker/index.qmd
+      - href: idea/index.qmd
+      - href: linux/index.qmd
+      - href: testcenter/index.qmd
+      - href: to-do/index.qmd
+
 format:
   html:
     theme: 

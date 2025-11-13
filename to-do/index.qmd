@@ -1,0 +1,86 @@
+---
+lang: de
+title: "To do"
+date: 2025-11-13
+---
+
+# Git
+
+fix-up message git anschauen KI fragen
+
+# E2E-Tests Optimierungen
+
+
+* E2E-Tests auch für Produktivumgebung? Dazu mal mit Nam und Sven sprechen
+
+### 1. Bugfixes
+
+24-9-2025: Wenn Sven finale Änderungen am Master vorgenommen hat muss ausführlich geprüft werden. Anschließend müssen die unten genannten Punkte bearbeitet werden. 
+
+* Zeiten bei einzelnen während des Testens verwendenten Booklets immer noch zu hoch. Ein Beispiel Booklet-Config Test Default.
+* demo und review manchmal tauchen snackbars nicht auf und der Test schlägt fehl
+* Bookletnamen kürzen für Restriction Tests
+
+### 2. Neue Tests
+
+Da Nam erst im Nov wiederkommt und viele Änderungen eingebracht werden müssen, müssen die einzelnen Featurebranches aufeinander aufbauen. Genauso wie von Claude empfohlen. Zu finden im Claude-Chat unter dem Prompt: git: mehrere entwicklungszweige, die aufeinander aufbauen
+
+* Optimierungen iFrame Selektion: Neuen Branch: e2e-better-iframe-selection anlegen. Neuen Code aus Desktop/Temp/TC-iFrame-Selection in Utils Routine getFromiFrame einfügen. Alle Tests anpassen, die diese getFromiFrame-Routine verwenden.
+* Test Speedtest-Player: Neuer Branch ist bereits angelegt mit dem Namen: e2e-player-run. Dieser Branch muss auf e2e-better-iframe-selection aufbauen. Hier müssen noch die Änderungen aus dem Verzeichnis: Desktop/Temp/TC-PlayerLoadE2E rein. Um die richtigen Stellen zu finden, können die Commits aus dem alten Branch: e2e-load-player betrachtet werden. Wenn Änderungen in dem neuen Branch: e2e-player-run drin sind, muss der alte Branch lokal und remote gelöscht werden.
+
+* Tests GeoGebra
+* Test Stars-Player
+* data-cy attribute in simple-player entfernen, die dürfen da nicht drin sein, weil der Playercode autak entwickelt ist. Der Testcode kann nur mittels contains nach Elementen suchen
+* sollten alle Tests mit allen Playern laufen?
+
+
+# Generell
+
+* gitlab.opencode.de: Disskussion Funktion testen, vielleicht sogar mit aktuellem Thema. Vielleicht dazu neuen ZWeig **IQB-TBA** aufmachen
+* 13.10.25: Beate schreibt alle an, dass sie auf Produktivsystem die Backups löschen. da nun Spiegelserver verfügbar.
+* Workflows GitHub von Sven anschauen
+
+# GM
+
+* Aktuelles Realease 17.3.0 via Newsletter senden
+* Sprung funktioniert manchmal nicht --> nicht reproduzierbar #873
+* Manchmal wird ein Block beim Sprung in einen anderen Block nicht gesperrt. Es ist dann nicht ausgegraut und kann sogar noch betreten werden. Kann gut nachgestellt werden: Pause drpcken im aktiven Block und dann in benachbarten Block springen #874
+
+# TC
+
+* Testen nach Angularupdate wahrscheinlich auf TC-Version 17.4.0
+--> Pagenavigation über Pfeile nicht möglich, nur durch Klick direkt auf Page möglich
+* Releaseplan erstellen: 1.-15.1.26 Version zum Testen --> UI/UX-Änderungen kommen nun doch erst zu April 2026
+* sollen die Schemadefinitionen ausgelagert werden? Und wenn dann wohin? In das Spezifikations-Repo?: Soll aus TC raus, es ist aber noch nichts genaues geplant.
+* Aufräumen Backups Studio, wann sollen Spiegelserverdaten aktualisiert werden?: Ist noch nicht klar, wann auf dem Spiegelserver aktualisiert wurde.
+* Ladeverhalten TC: Geogebra lädt nicht immer die gleiche JS-Datei bei gleicher Aufgabe --> beim Meeting mit GeoGebra besprechen und Jakob Rückmeldung geben
+
+
+## Updateplanung V17
+
+S1: 
+
+Wenn diese Bereiche abgelaufen sind und auf S2 ab November das Update auf V17 erfolgt ist, können diese beiden Bereiche dann umziehen auf S2. 
+Auch die beiden Bereiche von Jakob auf S3 können dann umziehen auf S2.
+
+S2:
+
+Update S2 V17 ab 01.12.25. Dann auch eventuell BiSta-Bereiche von S1 (siehe Lara Mail vom 18.7.25) mit umziehen auf S2.
+
+S4: Ab 15.10.25 Kann bzgl. Löschung von **VERA-8 Deutsch Präpilotierung** nachgefragt werden. Dann auch prüfen ob **Cognitive Labs 2023** weg kann. 
+Die nächsten Bereiche können dann voraussichtlich ab Januar 2026 gelöscht werden.
+
+
+# Studio
+
+* Testen: GeoGebra versuchen bei Module zu laden. Gibt es eine Fehlermeldung?
+* Es sollten vielleicht Beispielmodule nach der Installation schon vorhanden sein, um direkt arbeiten zu können.
+
+# TBA-Wiki
+
+* Texte zur Installation/KOnfiguration mit Sven anpassen. Hier haben sich Dinge verändert
+* Kodierkapitel um Informationen aus Textdatei: Texte_Antworten_TBA-Info ergänzen. Dazu mit Julian sprechen, um alle Zusammenhänge zu verstehen.
+
+# OpenCode
+
+* Stand: 05.11.25: warte auf rückmeldung ob votes möglich

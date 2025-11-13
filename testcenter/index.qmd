@@ -1,0 +1,27 @@
+---
+lang: de
+title: "Testcenter"
+---
+
+## Spezielle Debug-Möglichkeiten in Debug-Konsole des Browsers:
+
+* `tc.debug()`
+* `tc.debug(['off'])`
+ 
+## Data
+
+**aktuellen Inhalt WS lesen:** `make data-pull`
+
+**Änderungen in WS laden:** `make data-push`
+
+## Antwortdaten in JSON über API
+
+**Über Konsole:**
+In UI Antwort herunterladen dabei Konsole geöffnet lassen. Dann aug Entsprechende GET-Zeile rechte MT und auf "Bearbeiten und erneut senden". 
+Dann HEADER bei Accept ändern auf application/json und erneut senden.
+
+**Mit Bruno:**
+Bei Bruno entsprechenden aktuelle Token eingeben.
+
+**mit VSC:**
+Antwortendaten in Excel öffnen, alles aus Zeile Responses in VSC kopieren und dort STRG+Shift+i drücekn

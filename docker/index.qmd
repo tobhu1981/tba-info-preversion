@@ -1,0 +1,36 @@
+---
+lang: de
+title: "Docker"
+---
+
+## Container
+
+**Alle Container stoppen:** `docker kill $(docker ps -q)`
+
+**Alle Container entfernen:** `docker rm $(docker ps -a -q)`
+
+**Container abschießen und löschen:** `docker kill containername && docker rm containername`
+
+## Images
+
+**Docker Images entfernen:** `docker rmi $(docker images -q)`
+
+## Volumes
+
+**Sucht alle Volumes nicht mehr aktiver Container und löscht diese:** `docker volume prune`
+
+**Entfernt gezielt einzelne Volumes:** `docker volume rm volume_name`
+
+**Entfernt alle Volumes:** `docker volume rm $(docker volume ls -q)`
+
+## Netzwerk
+
+**Netzwerk anlegen:** `docker network create test`
+
+**Netzwerk laufendem Container hinzufügen:** `docker network connect test Container-Id`
+
+**Netzwerk bei Containererstellung zuweisen:** `docker run --network test -name server imagename`
+
+**Containerport:** `Dockerfile --> EXPOSE`
+
+**Verbindung Container- und Hostport:** `docker run -p 3000:3000 --name server-app container-Id`
